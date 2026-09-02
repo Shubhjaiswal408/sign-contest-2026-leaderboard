@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Make a Sign Contest 2026 — Playlist Leaderboard</title>
+<style>
+:root{
+  --bg:#0e0f13; --card:#171922; --card2:#1e2130; --line:#2a2e3f;
+  --tx:#e9ecf5; --mut:#9aa3bb; --acc:#ff4d4d; --acc2:#4da3ff; --gold:#ffc861;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 18px 60px}
+h1{margin:0 0 6px;font-size:28px;letter-spacing:-.02em}
+.sub{color:var(--mut);font-size:14px;margin-bottom:22px}
+.sub a{color:var(--acc2);text-decoration:none}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;flex:1;min-width:130px}
+.stat b{display:block;font-size:20px}
+.stat span{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+button.s{background:var(--card);border:1px solid var(--line);color:var(--mut);padding:8px 14px;border-radius:999px;cursor:pointer;font-size:14px}
+button.s:hover{color:var(--tx)}
+button.s.on{background:var(--acc);border-color:var(--acc);color:#fff}
+input{flex:1;min-width:180px;background:var(--card);border:1px solid var(--line);color:var(--tx);padding:9px 14px;border-radius:999px;font-size:14px;outline:none}
+input:focus{border-color:var(--acc2)}
+.row{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:10px;text-decoration:none;color:inherit;transition:.15s}
+.row:hover{background:var(--card2);border-color:#3b415c;transform:translateY(-1px)}
+.rank{width:42px;text-align:center;font-size:20px;font-weight:700;color:var(--mut);flex:none}
+.rank.t1{color:var(--gold)}.rank.t2{color:#cfd6e6}.rank.t3{color:#d99b62}
+.thumb{width:150px;aspect-ratio:16/9;border-radius:9px;object-fit:cover;background:#000;flex:none}
+.meta{min-width:0;flex:1}
+.ttl{font-weight:600;font-size:15px;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.ch{color:var(--mut);font-size:13px}
+.nums{display:flex;gap:16px;flex:none;text-align:right;padding-right:8px}
+.nums div b{display:block;font-size:17px}
+.nums div span{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.foot{color:var(--mut);font-size:12px;margin-top:26px;text-align:center}
+@media(max-width:640px){
+ .thumb{width:104px}.rank{width:28px;font-size:16px}
+ .nums{flex-direction:column;gap:2px}.nums div b{font-size:14px}
+ .wrap{padding:18px 12px 40px}h1{font-size:22px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Make a Sign Contest 2026</h1>
+  <div class="sub">Ranked leaderboard of all <span id="n">–</span> playlist videos ·
+    <a href="https://www.youtube.com/playlist?list=PLpH_4mf13-A2GgNLVfExG8f5H98EyVSfL" target="_blank">open playlist on YouTube ↗</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><span>Videos</span><b id="s-n">–</b></div>
+    <div class="stat"><span>Total views</span><b id="s-v">–</b></div>
+    <div class="stat"><span>Total likes</span><b id="s-l">–</b></div>
+    <div class="stat"><span>Avg views</span><b id="s-a">–</b></div>
+  </div>
+
+  <div class="bar">
+    <button class="s on" data-k="views">Views</button>
+    <button class="s" data-k="likes">Likes</button>
+    <button class="s" data-k="ratio">Like&nbsp;%</button>
+    <button class="s" data-k="date">Newest</button>
+    <button class="s" data-k="order">Playlist order</button>
+    <input id="q" placeholder="Search title or channel…">
+  </div>
+
+  <div id="list"></div>
+  <div class="foot">Snapshot captured <span id="cap"></span>. Counts are as shown publicly on YouTube at that time.</div>
+</div>
+
+<script>
+let DATA=[], key='views', q='';
+const fmt=n=>n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':''+n;
+function render(){
+  let d=DATA.filter(v=>(v.title+' '+v.channel).toLowerCase().includes(q));
+  const cmp={
+    views:(a,b)=>b.views-a.views,
+    likes:(a,b)=>b.likes-a.likes,
+    ratio:(a,b)=>(b.views?b.likes/b.views:0)-(a.views?a.likes/a.views:0),
+    date:(a,b)=>(b.date||'').localeCompare(a.date||''),
+    order:(a,b)=>a.i-b.i
+  }[key];
+  d.sort(cmp);
+  document.getElementById('list').innerHTML=d.map((v,i)=>{
+    const r=v.views?(100*v.likes/v.views).toFixed(1)+'%':'—';
+    const t=i<3?' t'+(i+1):'';
+    return `<a class="row" target="_blank" href="https://www.youtube.com/watch?v=${v.id}&list=PLpH_4mf13-A2GgNLVfExG8f5H98EyVSfL">
+      <div class="rank${t}">${i+1}</div>
+      <img class="thumb" loading="lazy" src="https://i.ytimg.com/vi/${v.id}/mqdefault.jpg" alt="">
+      <div class="meta"><div class="ttl">${esc(v.title)}</div>
+        <div class="ch">${esc(v.channel)} · ${v.date||''}</div></div>
+      <div class="nums">
+        <div><b>${fmt(v.views)}</b><span>views</span></div>
+        <div><b>${fmt(v.likes)}</b><span>likes</span></div>
+        <div><b>${r}</b><span>like %</span></div>
+      </div></a>`;
+  }).join('') || '<div class="ch">No matches.</div>';
+}
+const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+document.querySelectorAll('button.s').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('button.s').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); key=b.dataset.k; render();
+});
+document.getElementById('q').oninput=e=>{q=e.target.value.toLowerCase();render()};
+fetch('data.json').then(r=>r.json()).then(j=>{
+  DATA=j.map((v,i)=>({...v,i}));
+  const tv=DATA.reduce((s,v)=>s+v.views,0), tl=DATA.reduce((s,v)=>s+v.likes,0);
+  const $=id=>document.getElementById(id);
+  $('n').textContent=$('s-n').textContent=DATA.length;
+  $('s-v').textContent=tv.toLocaleString(); $('s-l').textContent=tl.toLocaleString();
+  $('s-a').textContent=Math.round(tv/DATA.length).toLocaleString();
+  $('cap').textContent=new Date(document.lastModified).toDateString();
+  render();
+});
+</script>
+</body></html>
