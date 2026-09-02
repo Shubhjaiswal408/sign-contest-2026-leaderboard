@@ -69,7 +69,18 @@ def playlist_items(pid):
 
 def video_stats(item):
     html = get(f"https://www.youtube.com/watch?v={item['id']}&hl=en&gl=US")
-    views = re.search(r'"viewCount":"(\d+)"', html)
+    views = None
+    for pat in (r'"viewCount":"(\d+)"',
+                r'"viewCount":\{"simpleText":"([\d,]+) view',
+                r'"videoViewCountRenderer".{0,200}?"simpleText":"([\d,]+) view',
+                r'itemprop="interactionCount" content="(\d+)"',
+                r'"interactionCount":"(\d+)"',
+                r'"viewCountText":\{"simpleText":"([\d,]+) view',
+                r'([\d,]+) views"'):
+        m = re.search(pat, html)
+        if m and to_int(m.group(1)) > 0:
+            views = m
+            break
     likes = re.search(r'"accessibilityText":"([\d.,KMB]+) likes?"', html)
     if likes:
         like_count = to_int(likes.group(1))
@@ -81,7 +92,7 @@ def video_stats(item):
     channel = re.search(r'"author":"([^"]+)"', html)
     length = re.search(r'"lengthSeconds":"(\d+)"', html)
     return {"id": item["id"], "title": item["title"],
-            "views": int(views.group(1)) if views else 0,
+            "views": to_int(views.group(1)) if views else 0,
             "likes": like_count,
             "date": date.group(1)[:10] if date else "",
             "channel": channel.group(1) if channel else "",
@@ -108,6 +119,20 @@ def main():
 
     if len(rows) < len(items) * 0.8:
         raise SystemExit(f"only {len(rows)}/{len(items)} videos scraped - refusing to overwrite data.json")
+
+    # Sanity guards: YouTube sometimes withholds counts from datacenter IPs and
+    # returns pages with no view numbers at all. Never let that clobber good data.
+    total = sum(r["views"] for r in rows)
+    zeros = sum(1 for r in rows if r["views"] == 0)
+    if total == 0 or zeros > len(rows) * 0.5:
+        raise SystemExit(f"view counts look withheld ({zeros}/{len(rows)} at zero) - refusing to overwrite data.json")
+    try:
+        with open("data.json", encoding="utf-8") as fh:
+            previous = sum(r["views"] for r in json.load(fh))
+    except Exception:
+        previous = 0
+    if previous and total < previous * 0.5:
+        raise SystemExit(f"total views fell {previous} -> {total} - refusing to overwrite data.json")
 
     with open("data.json", "w", encoding="utf-8") as fh:
         json.dump(rows, fh, ensure_ascii=False, indent=1)
