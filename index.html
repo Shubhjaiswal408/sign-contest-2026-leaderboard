@@ -68,7 +68,7 @@ input:focus{border-color:var(--acc2)}
   </div>
 
   <div id="list"></div>
-  <div class="foot">Snapshot captured <span id="cap"></span>. Counts are as shown publicly on YouTube at that time.</div>
+  <div class="foot">Counts last refreshed <span id="cap">—</span>. Refreshed automatically every day from the public YouTube pages.</div>
 </div>
 
 <script>
@@ -112,7 +112,9 @@ fetch('data.json').then(r=>r.json()).then(j=>{
   $('n').textContent=$('s-n').textContent=DATA.length;
   $('s-v').textContent=tv.toLocaleString(); $('s-l').textContent=tl.toLocaleString();
   $('s-a').textContent=Math.round(tv/DATA.length).toLocaleString();
-  $('cap').textContent=new Date(document.lastModified).toDateString();
+  fetch('updated.txt').then(r=>r.ok?r.text():'').then(t=>{
+    if(t.trim()) $('cap').textContent=t.trim();
+  }).catch(()=>{});
   render();
 });
 </script>
