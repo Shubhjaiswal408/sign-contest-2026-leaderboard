@@ -87,10 +87,11 @@ def video_stats(item):
     else:
         alt = re.search(r"like this video along with ([\d,]+) other people", html)
         like_count = to_int(alt.group(1)) + 1 if alt else 0
+    # Only accept real ISO dates - YouTube's "2 weeks ago" text is useless here.
     date = None
-    for pat in (r'"publishDate":"([^"]+)"', r'"uploadDate":"([^"]+)"',
-                r'itemprop="(?:datePublished|uploadDate)" content="([^"]+)"',
-                r'"publishedTimeText":\{"simpleText":"([^"]+)"'):
+    for pat in (r'"publishDate":"(\d{4}-\d{2}-\d{2})',
+                r'"uploadDate":"(\d{4}-\d{2}-\d{2})',
+                r'itemprop="(?:datePublished|uploadDate)" content="(\d{4}-\d{2}-\d{2})'):
         date = re.search(pat, html)
         if date:
             break
@@ -105,7 +106,7 @@ def video_stats(item):
     return {"id": item["id"], "title": item["title"],
             "views": to_int(views.group(1)) if views else 0,
             "likes": like_count,
-            "date": date.group(1)[:10] if date else "",
+            "date": date.group(1) if date else "",
             "channel": channel.group(1) if channel else "",
             "duration": int(length.group(1)) if length else 0}
 
