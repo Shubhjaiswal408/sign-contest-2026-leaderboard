@@ -87,9 +87,20 @@ def video_stats(item):
     else:
         alt = re.search(r"like this video along with ([\d,]+) other people", html)
         like_count = to_int(alt.group(1)) + 1 if alt else 0
-    date = (re.search(r'"publishDate":"([^"]+)"', html)
-            or re.search(r'"uploadDate":"([^"]+)"', html))
-    channel = re.search(r'"author":"([^"]+)"', html)
+    date = None
+    for pat in (r'"publishDate":"([^"]+)"', r'"uploadDate":"([^"]+)"',
+                r'itemprop="(?:datePublished|uploadDate)" content="([^"]+)"',
+                r'"publishedTimeText":\{"simpleText":"([^"]+)"'):
+        date = re.search(pat, html)
+        if date:
+            break
+    channel = None
+    for pat in (r'"author":"([^"]+)"', r'"ownerChannelName":"([^"]+)"',
+                r'<link itemprop="name" content="([^"]+)"',
+                r'"videoOwnerChannelName":"([^"]+)"'):
+        channel = re.search(pat, html)
+        if channel:
+            break
     length = re.search(r'"lengthSeconds":"(\d+)"', html)
     return {"id": item["id"], "title": item["title"],
             "views": to_int(views.group(1)) if views else 0,
@@ -105,6 +116,12 @@ def main():
     if not items:
         raise SystemExit("no videos found - refusing to overwrite data.json")
 
+    try:
+        with open("data.json", encoding="utf-8") as fh:
+            known = {r["id"]: r for r in json.load(fh)}
+    except Exception:
+        known = {}
+
     rows, failed = [], []
     for i, item in enumerate(items, 1):
         try:
@@ -113,6 +130,12 @@ def main():
             print(f"{i:3}/{len(items)} FAILED {item['id']}: {exc}", flush=True)
             failed.append(item["id"])
             continue
+        # YouTube withholds some fields from datacenter IPs; keep the last
+        # good value rather than blanking the page out.
+        old = known.get(row["id"], {})
+        for field in ("title", "channel", "date", "duration"):
+            if not row.get(field) and old.get(field):
+                row[field] = old[field]
         rows.append(row)
         print(f"{i:3}/{len(items)} {row['views']:>7} views {row['likes']:>5} likes  {row['title'][:45]}", flush=True)
         time.sleep(0.5)
@@ -126,11 +149,7 @@ def main():
     zeros = sum(1 for r in rows if r["views"] == 0)
     if total == 0 or zeros > len(rows) * 0.5:
         raise SystemExit(f"view counts look withheld ({zeros}/{len(rows)} at zero) - refusing to overwrite data.json")
-    try:
-        with open("data.json", encoding="utf-8") as fh:
-            previous = sum(r["views"] for r in json.load(fh))
-    except Exception:
-        previous = 0
+    previous = sum(r["views"] for r in known.values())
     if previous and total < previous * 0.5:
         raise SystemExit(f"total views fell {previous} -> {total} - refusing to overwrite data.json")
 
