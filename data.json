@@ -1,9 +1,54 @@
 [
  {
+  "id": "6PcHylcb9tY",
+  "title": "ClockPulse menu/chameleon signage project",
+  "views": 679,
+  "likes": 133,
+  "date": "",
+  "channel": "",
+  "duration": 0
+ },
+ {
+  "id": "G19orwHft_4",
+  "title": "FlashBoard",
+  "views": 206,
+  "likes": 4,
+  "date": "",
+  "channel": "",
+  "duration": 0
+ },
+ {
+  "id": "Q14jcQIcKss",
+  "title": "epod Sign",
+  "views": 265,
+  "likes": 2,
+  "date": "",
+  "channel": "",
+  "duration": 0
+ },
+ {
+  "id": "oCtGXtEe35Y",
+  "title": "VERT (Versatile Eco-farming Robotic Technology)",
+  "views": 610,
+  "likes": 523,
+  "date": "",
+  "channel": "",
+  "duration": 0
+ },
+ {
+  "id": "c3wlpjcuzns",
+  "title": "Aurora Kitchen — a restaurant menu nobody has to touch",
+  "views": 169,
+  "likes": 3,
+  "date": "",
+  "channel": "",
+  "duration": 0
+ },
+ {
   "id": "H7K5KoyuIYc",
   "title": "Table Map",
-  "views": 497,
-  "likes": 10,
+  "views": 574,
+  "likes": 12,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
   "duration": 150
@@ -11,7 +56,7 @@
  {
   "id": "IuRHizdBxsQ",
   "title": "ServeSync",
-  "views": 368,
+  "views": 388,
   "likes": 39,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -20,7 +65,7 @@
  {
   "id": "o_PpS90x8Sc",
   "title": "Shop/office time based message system",
-  "views": 158,
+  "views": 180,
   "likes": 2,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -29,7 +74,7 @@
  {
   "id": "Enh3W5CGj9s",
   "title": "Motion Sensing Smart Sign",
-  "views": 217,
+  "views": 241,
   "likes": 2,
   "date": "",
   "channel": "",
@@ -38,7 +83,7 @@
  {
   "id": "DuR8mbUjhpM",
   "title": "Mesero AI — a voice waiter that hears who at the table is ordering",
-  "views": 346,
+  "views": 366,
   "likes": 2,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -47,7 +92,7 @@
  {
   "id": "Ys4B9YkJpmo",
   "title": "Smart Safety Supporter",
-  "views": 340,
+  "views": 349,
   "likes": 13,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -56,7 +101,7 @@
  {
   "id": "0mKcLiJvbGg",
   "title": "ServeCircle — A BLE-Controlled Interactive Turntable for Shared Dining",
-  "views": 220,
+  "views": 218,
   "likes": 0,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -65,8 +110,8 @@
  {
   "id": "mqsWhydx0Jw",
   "title": "Doki Doki : Gamifying the Restaurant Waiting Experience",
-  "views": 1269,
-  "likes": 141,
+  "views": 1355,
+  "likes": 147,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
   "duration": 111
@@ -74,7 +119,7 @@
  {
   "id": "Y-0NyUZq8WI",
   "title": "QueueSense: Dynamic Pricing & Wait-Time Display for Smart Food Courts.",
-  "views": 520,
+  "views": 524,
   "likes": 4,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -83,7 +128,7 @@
  {
   "id": "gVOlLt1kKp0",
   "title": "Haqimi",
-  "views": 326,
+  "views": 333,
   "likes": 4,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -92,8 +137,8 @@
  {
   "id": "RjIYbXeqVdU",
   "title": "PaperDine: Touch-Free Restaurant Management System",
-  "views": 1433,
-  "likes": 156,
+  "views": 1457,
+  "likes": 155,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
   "duration": 189
@@ -101,7 +146,7 @@
  {
   "id": "JHMICuYuo50",
   "title": "AlwaysAvailableWaitingWaiter",
-  "views": 407,
+  "views": 411,
   "likes": 6,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -110,8 +155,8 @@
  {
   "id": "YDJHQbYd8Go",
   "title": "TokiiSign",
-  "views": 433,
-  "likes": 8,
+  "views": 467,
+  "likes": 20,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
   "duration": 137
@@ -119,8 +164,8 @@
  {
   "id": "OdE6n-D3waY",
   "title": "Aurora: The Context-Aware Storefront Promoter",
-  "views": 976,
-  "likes": 45,
+  "views": 992,
+  "likes": 46,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
   "duration": 53
@@ -128,7 +173,7 @@
  {
   "id": "Wh-x-9c9yRo",
   "title": "Lumina Desk: The Smart Restaurant Table",
-  "views": 467,
+  "views": 484,
   "likes": 143,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -137,8 +182,8 @@
  {
   "id": "DE8_xfprRk8",
   "title": "The Firepot: reimagining Hotpot",
-  "views": 946,
-  "likes": 227,
+  "views": 1011,
+  "likes": 242,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
   "duration": 279
@@ -146,7 +191,7 @@
  {
   "id": "cOp6ZTZDcyA",
   "title": "BiteBuddy",
-  "views": 436,
+  "views": 441,
   "likes": 20,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -155,7 +200,7 @@
  {
   "id": "Jj1wgF8snc0",
   "title": "Lunatic Light",
-  "views": 816,
+  "views": 824,
   "likes": 95,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -164,7 +209,7 @@
  {
   "id": "PF28VosVNZQ",
   "title": "Table Assistant",
-  "views": 139,
+  "views": 143,
   "likes": 0,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -173,7 +218,7 @@
  {
   "id": "FuM-9vpIqiI",
   "title": "CraveGuide: Voice-Driven Food Recommendation & Ordering",
-  "views": 302,
+  "views": 305,
   "likes": 3,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -182,7 +227,7 @@
  {
   "id": "E7D-2-5b5FE",
   "title": "KaiSign: Accessible Dining for Everyone",
-  "views": 613,
+  "views": 615,
   "likes": 74,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -191,7 +236,7 @@
  {
   "id": "bPIBPwOu2jo",
   "title": "WarkopStock: Connected Smart E-Paper Inventory Dashboard",
-  "views": 266,
+  "views": 270,
   "likes": 7,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -200,8 +245,8 @@
  {
   "id": "MOL8ULAfpSY",
   "title": "NEXORA - Intelligent Spaces, Better Experiences.",
-  "views": 525,
-  "likes": 69,
+  "views": 554,
+  "likes": 71,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
   "duration": 167
@@ -209,7 +254,7 @@
  {
   "id": "tX6S0qZtahA",
   "title": "Reachy PizzAIolo: An AI Restaurant Ordering Experience with Reachy Mini + Seeed Studio E1003",
-  "views": 669,
+  "views": 696,
   "likes": 17,
   "date": "2026-08-29",
   "channel": "Seeed Studio",
@@ -218,7 +263,7 @@
  {
   "id": "mmH_TkKPQ2Y",
   "title": "Tinycorder V3",
-  "views": 699,
+  "views": 721,
   "likes": 29,
   "date": "2026-08-28",
   "channel": "Seeed Studio",
@@ -227,7 +272,7 @@
  {
   "id": "gEvu0nEw274",
   "title": "The Mood Mirror (an intelligent table-side signage system)",
-  "views": 390,
+  "views": 393,
   "likes": 10,
   "date": "2026-08-27",
   "channel": "Seeed Studio",
@@ -236,7 +281,7 @@
  {
   "id": "Uywy9_Et93w",
   "title": "Ambient Recall : FSRS flashcards that live on your desk, not in your pocket",
-  "views": 153,
+  "views": 156,
   "likes": 1,
   "date": "2026-08-26",
   "channel": "Seeed Studio",
@@ -245,7 +290,7 @@
  {
   "id": "VgsKN8xb7sY",
   "title": "One Tap Dining",
-  "views": 208,
+  "views": 209,
   "likes": 4,
   "date": "2026-08-24",
   "channel": "Seeed Studio",
@@ -254,7 +299,7 @@
  {
   "id": "5e9iP5OEc0M",
   "title": "Smart Digital Kiosk and Real time stock manager",
-  "views": 276,
+  "views": 279,
   "likes": 26,
   "date": "2026-08-23",
   "channel": "Seeed Studio",
@@ -263,7 +308,7 @@
  {
   "id": "5YpxpKecmhI",
   "title": "IoT-Enabled Smart Display for Scheduled Promotions",
-  "views": 427,
+  "views": 430,
   "likes": 59,
   "date": "2026-08-22",
   "channel": "Seeed Studio",
@@ -272,7 +317,7 @@
  {
   "id": "z7dQpqSvzxU",
   "title": "SmartServe",
-  "views": 505,
+  "views": 508,
   "likes": 38,
   "date": "2026-08-21",
   "channel": "Seeed Studio",
@@ -281,7 +326,7 @@
  {
   "id": "9YdvyBYkl8Q",
   "title": "The Personal Post : An e-paper front page for the stocks you actually own",
-  "views": 341,
+  "views": 347,
   "likes": 7,
   "date": "2026-08-20",
   "channel": "Seeed Studio",
@@ -290,7 +335,7 @@
  {
   "id": "8Z1Vlju_1gg",
   "title": "As Served — a table that shows your meal at its real size.",
-  "views": 306,
+  "views": 308,
   "likes": 24,
   "date": "2026-08-19",
   "channel": "Seeed Studio",
@@ -326,7 +371,7 @@
  {
   "id": "6NGwSU5LkIY",
   "title": "Vision Menu",
-  "views": 250,
+  "views": 254,
   "likes": 15,
   "date": "2026-08-12",
   "channel": "Seeed Studio",
@@ -335,7 +380,7 @@
  {
   "id": "ZIZxes-uzW4",
   "title": "IoT-based Smart Washroom Monitoring System",
-  "views": 199,
+  "views": 202,
   "likes": 7,
   "date": "2026-08-06",
   "channel": "Seeed Studio",
@@ -344,7 +389,7 @@
  {
   "id": "8UW5FujvfXc",
   "title": "AI-Powered Smart Drive-Through System with XIAO ESP32S3",
-  "views": 475,
+  "views": 478,
   "likes": 30,
   "date": "2026-08-05",
   "channel": "Seeed Studio",
@@ -353,7 +398,7 @@
  {
   "id": "43O6_xG3Szs",
   "title": "A Smart, Ultra-Low Power Color eInk Table Reservation Sign!",
-  "views": 330,
+  "views": 333,
   "likes": 16,
   "date": "2026-08-04",
   "channel": "Seeed Studio",
@@ -362,7 +407,7 @@
  {
   "id": "qMFP--SghsE",
   "title": "CYBERWAVE — The Future of Restaurant Signage",
-  "views": 741,
+  "views": 752,
   "likes": 74,
   "date": "2026-07-12",
   "channel": "Seeed Studio",
@@ -371,7 +416,7 @@
  {
   "id": "fTXyynW8MCg",
   "title": "FLEXCORE",
-  "views": 284,
+  "views": 288,
   "likes": 27,
   "date": "2026-07-12",
   "channel": "Seeed Studio",
@@ -380,7 +425,7 @@
  {
   "id": "JCeL3Tpkj-M",
   "title": "Build Smart Restaurant Signs - Interactive Signage Contest 2026",
-  "views": 1140,
+  "views": 1142,
   "likes": 15,
   "date": "2026-03-09",
   "channel": "Seeed Studio",
