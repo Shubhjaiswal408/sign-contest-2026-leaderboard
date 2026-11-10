@@ -2,7 +2,7 @@
  {
   "id": "nDWtsHlR_xM",
   "title": "Poly-Glot -The board that listens.",
-  "views": 1071,
+  "views": 1073,
   "likes": 95,
   "date": "",
   "channel": "",
@@ -20,7 +20,7 @@
  {
   "id": "6PcHylcb9tY",
   "title": "ClockPulse menu/chameleon signage project",
-  "views": 1466,
+  "views": 1467,
   "likes": 263,
   "date": "",
   "channel": "",
@@ -56,7 +56,7 @@
  {
   "id": "c3wlpjcuzns",
   "title": "Aurora Kitchen — a restaurant menu nobody has to touch",
-  "views": 286,
+  "views": 287,
   "likes": 5,
   "date": "",
   "channel": "",
@@ -74,7 +74,7 @@
  {
   "id": "IuRHizdBxsQ",
   "title": "ServeSync",
-  "views": 456,
+  "views": 457,
   "likes": 39,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -101,7 +101,7 @@
  {
   "id": "DuR8mbUjhpM",
   "title": "Mesero AI — a voice waiter that hears who at the table is ordering",
-  "views": 889,
+  "views": 892,
   "likes": 101,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -128,7 +128,7 @@
  {
   "id": "mqsWhydx0Jw",
   "title": "Doki Doki : Gamifying the Restaurant Waiting Experience",
-  "views": 1891,
+  "views": 1892,
   "likes": 244,
   "date": "2026-09-01",
   "channel": "Seeed Studio",
@@ -155,7 +155,7 @@
  {
   "id": "RjIYbXeqVdU",
   "title": "PaperDine: Touch-Free Restaurant Management System",
-  "views": 1662,
+  "views": 1665,
   "likes": 158,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -200,8 +200,8 @@
  {
   "id": "DE8_xfprRk8",
   "title": "The Firepot: reimagining Hotpot",
-  "views": 2303,
-  "likes": 702,
+  "views": 2304,
+  "likes": 701,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
   "duration": 279
@@ -218,7 +218,7 @@
  {
   "id": "Jj1wgF8snc0",
   "title": "Lunatic Light",
-  "views": 926,
+  "views": 927,
   "likes": 101,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -227,7 +227,7 @@
  {
   "id": "PF28VosVNZQ",
   "title": "Table Assistant",
-  "views": 220,
+  "views": 221,
   "likes": 2,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -263,7 +263,7 @@
  {
   "id": "MOL8ULAfpSY",
   "title": "NEXORA - Intelligent Spaces, Better Experiences.",
-  "views": 727,
+  "views": 728,
   "likes": 79,
   "date": "2026-08-30",
   "channel": "Seeed Studio",
@@ -272,8 +272,8 @@
  {
   "id": "tX6S0qZtahA",
   "title": "Reachy PizzAIolo: An AI Restaurant Ordering Experience with Reachy Mini + Seeed Studio E1003",
-  "views": 1196,
-  "likes": 31,
+  "views": 1201,
+  "likes": 32,
   "date": "2026-08-29",
   "channel": "Seeed Studio",
   "duration": 166
@@ -326,7 +326,7 @@
  {
   "id": "5YpxpKecmhI",
   "title": "IoT-Enabled Smart Display for Scheduled Promotions",
-  "views": 473,
+  "views": 474,
   "likes": 60,
   "date": "2026-08-22",
   "channel": "Seeed Studio",
@@ -403,5 +403,50 @@
   "date": "2026-08-06",
   "channel": "Seeed Studio",
   "duration": 102
+ },
+ {
+  "id": "8UW5FujvfXc",
+  "title": "AI-Powered Smart Drive-Through System with XIAO ESP32S3",
+  "views": 530,
+  "likes": 32,
+  "date": "",
+  "channel": "",
+  "duration": 0
+ },
+ {
+  "id": "43O6_xG3Szs",
+  "title": "A Smart, Ultra-Low Power Color eInk Table Reservation Sign!",
+  "views": 377,
+  "likes": 16,
+  "date": "",
+  "channel": "",
+  "duration": 0
+ },
+ {
+  "id": "qMFP--SghsE",
+  "title": "CYBERWAVE — The Future of Restaurant Signage",
+  "views": 884,
+  "likes": 78,
+  "date": "",
+  "channel": "",
+  "duration": 0
+ },
+ {
+  "id": "fTXyynW8MCg",
+  "title": "FLEXCORE",
+  "views": 356,
+  "likes": 28,
+  "date": "",
+  "channel": "",
+  "duration": 0
+ },
+ {
+  "id": "JCeL3Tpkj-M",
+  "title": "Build Smart Restaurant Signs - Interactive Signage Contest 2026",
+  "views": 1181,
+  "likes": 15,
+  "date": "",
+  "channel": "",
+  "duration": 0
  }
 ]
